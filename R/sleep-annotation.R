@@ -3,8 +3,8 @@
 #' This function first uses a motion classifier to decide whether an animal is moving during a given time window.
 #' Then, it defines sleep as contiguous immobility for a minimum duration.
 #'
-#' @param data  [data.table] containing behavioural variable from or one multiple animals.
-#' When it has a key, unique values, are assumed to represent unique individuals (e.g. in a [behavr] table).
+#' @param data  [data.table::data.table] containing behavioural variable from or one multiple animals.
+#' When it has a key, unique values, are assumed to represent unique individuals (e.g. in a [behavr::behavr] table).
 #' Otherwise, it analysis the data as coming from a single animal. `data` must have a column `t` representing time.
 #' @param time_window_length number of seconds to be used by the motion classifier.
 #' This corresponds to the sampling period of the output data.
@@ -12,7 +12,7 @@
 #' Immobility bouts longer or equal to this value are considered as sleep.
 #' @param motion_detector_FUN function used to classify movement
 #' @param ... extra arguments to be passed to `motion_classifier_FUN`.
-#' @return a [behavr] table similar to `data` with additional variables/annotations (i.e. `moving` and `asleep`).
+#' @return a [behavr::behavr] table similar to `data` with additional variables/annotations (i.e. `moving` and `asleep`).
 #' The resulting data will only have one data point every `time_window_length` seconds.
 #' @details
 #' The default `time_window_length` is 300 seconds -- it is also known as the "5-minute rule".

@@ -5,15 +5,19 @@
 \alias{sleep_dam_annotation}
 \title{Score sleep behaviour from immobility}
 \usage{
-sleep_annotation(data, time_window_length = 10,
-  min_time_immobile = 300, motion_detector_FUN = max_velocity_detector,
-  ...)
+sleep_annotation(
+  data,
+  time_window_length = 10,
+  min_time_immobile = 300,
+  motion_detector_FUN = max_velocity_detector,
+  ...
+)
 
 sleep_dam_annotation(data, min_time_immobile = 300)
 }
 \arguments{
-\item{data}{\link{data.table} containing behavioural variable from or one multiple animals.
-When it has a key, unique values, are assumed to represent unique individuals (e.g. in a \link{behavr} table).
+\item{data}{\link[data.table:data.table]{data.table::data.table} containing behavioural variable from or one multiple animals.
+When it has a key, unique values, are assumed to represent unique individuals (e.g. in a \link[behavr:behavr]{behavr::behavr} table).
 Otherwise, it analysis the data as coming from a single animal. \code{data} must have a column \code{t} representing time.}
 
 \item{time_window_length}{number of seconds to be used by the motion classifier.
@@ -27,7 +31,7 @@ Immobility bouts longer or equal to this value are considered as sleep.}
 \item{...}{extra arguments to be passed to \code{motion_classifier_FUN}.}
 }
 \value{
-a \link{behavr} table similar to \code{data} with additional variables/annotations (i.e. \code{moving} and \code{asleep}).
+a \link[behavr:behavr]{behavr::behavr} table similar to \code{data} with additional variables/annotations (i.e. \code{moving} and \code{asleep}).
 The resulting data will only have one data point every \code{time_window_length} seconds.
 }
 \description{
